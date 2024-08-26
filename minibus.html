@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .gallery img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .language-buttons {
+            margin-bottom: 20px;
+        }
+        .language-buttons button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            margin: 0 5px;
+            background-color: #333;
+            color: #fff;
+        }
+        .language-buttons button.active {
+            background-color: #555;
+        }
+        .back-button {
+            margin-top: 20px;
+        }
+        .back-button button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #333;
+            color: #fff;
+        }
+        .back-button button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="language-buttons">
+        <button id="btn-en" class="active">English</button>
+        <button id="btn-tr">Türkçe</button>
+    </div>
+
+    <h1 id="title">Explore the Versatility of Minibuses</h1>
+    <p id="description">Minibuses offer a compact yet spacious solution for group transportation, making them ideal for both urban and rural environments.</p>
+    
+    <div class="gallery">
+        <img src="https://example.com/minibus1.jpg" alt="Minibus Image 1">
+        <img src="https://example.com/minibus2.jpg" alt="Minibus Image 2">
+        <img src="https://example.com/minibus3.jpg" alt="Minibus Image 3">
+    </div>
+
+    <div class="back-button">
+        <button id="back-button" onclick="location.href='index.html'">Back to Gallery</button>
+    </div>
+
+    <script>
+        const enButton = document.getElementById('btn-en');
+        const trButton = document.getElementById('btn-tr');
+        const title = document.getElementById('title');
+        const description = document.getElementById('description');
+        const backButton = document.getElementById('back-button');
+
+        enButton.addEventListener('click', () => {
+            title.textContent = 'Explore the Versatility of Minibuses';
+            description.textContent = 'Minibuses offer a compact yet spacious solution for group transportation, making them ideal for both urban and rural environments.';
+            backButton.textContent = 'Back to Gallery';
+            enButton.classList.add('active');
+            trButton.classList.remove('active');
+        });
+
+        trButton.addEventListener('click', () => {
+            title.textContent = 'Minibüslerin Çok Yönlülüğünü Keşfedin';
+            description.textContent = 'Minibüsler, grup taşımacılığı için hem şehir hem de kırsal alanlarda ideal olan kompakt ama geniş bir çözüm sunar.';
+            backButton.textContent = 'Galeriye Geri Dön';
+            trButton.classList.add('active');
+            enButton.classList.remove('active');
+        });
+    </script>
+</body>
+</html>
